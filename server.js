@@ -15,7 +15,7 @@ app.use(bodyparser.urlencoded({extended:true}));
 app.use(cors());
 /// Connecting mangoatlas to mongoose
 mongoose.connect(Connection_URL).then( ()=>{
-    app.listen(5000,()=>{
+    app.listen(process.env.PORT||5000,()=>{
         console.log(`listening to port number ${5000}`);
     })
 }).catch((e)=>{
